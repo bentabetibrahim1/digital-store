@@ -1620,13 +1620,6 @@ function initFirebase() {
 }
 
 
-function resetConfig() {
-  if (confirm('هل تريد مسح إعدادات Firebase والبدء من جديد؟')) {
-    localStorage.removeItem('fb_config');
-    location.reload();
-  }
-}
-
 // ===== DEMO PRODUCTS =====
 function loadDemoProducts() {
   allProducts = [
