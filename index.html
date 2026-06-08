@@ -1525,27 +1525,7 @@ let isDemoMode = false;
 
 // ===== AUTO LOAD SAVED CONFIG =====
 window.addEventListener('load', function() {
-  const saved = localStorage.getItem('fb_config');
-  if (saved) {
-    try {
-      const c = JSON.parse(saved);
-      document.getElementById('cfg_apiKey').value = c.apiKey || '';
-      document.getElementById('cfg_authDomain').value = c.authDomain || '';
-      document.getElementById('cfg_projectId').value = c.projectId || '';
-      document.getElementById('cfg_storageBucket').value = c.storageBucket || '';
-      document.getElementById('cfg_messagingSenderId').value = c.messagingSenderId || '';
-      document.getElementById('cfg_appId').value = c.appId || '';
-      document.getElementById('cfg_storeName').value = c.storeName || '';
-      document.getElementById('cfg_adminEmail').value = c.adminEmail || '';
-      document.getElementById('cfg_adminPass').value = c.adminPass || '';
-      document.getElementById('cfg_phone').value = c.phone || '';
-
-      // إذا كانت البيانات موجودة ابدأ تلقائياً
-      if (c.apiKey && c.authDomain && c.projectId) {
-        initFirebaseAuto(c);
-      }
-    } catch(e) {}
-  }
+  initFirebase();
 });
 
 function initFirebaseAuto(c) {
@@ -1601,40 +1581,30 @@ function demoMode() {
 
 // ===== INIT FIREBASE =====
 function initFirebase() {
-  const apiKey = document.getElementById('cfg_apiKey').value.trim();
-  const authDomain = document.getElementById('cfg_authDomain').value.trim();
-  const projectId = document.getElementById('cfg_projectId').value.trim();
-  const storageBucket = document.getElementById('cfg_storageBucket').value.trim();
-  const messagingSenderId = document.getElementById('cfg_messagingSenderId').value.trim();
-  const appId = document.getElementById('cfg_appId').value.trim();
-
-  if (!apiKey || !authDomain || !projectId) {
-    showToast('يرجى ملء حقول Firebase الأساسية', 'error');
-    return;
-  }
 
   config = {
-    storeName: document.getElementById('cfg_storeName').value.trim() || 'متجري الرقمي',
-    adminEmail: document.getElementById('cfg_adminEmail').value.trim() || 'admin@store.com',
-    adminPass: document.getElementById('cfg_adminPass').value.trim() || 'admin123',
-    phone: document.getElementById('cfg_phone').value.trim()
+    storeName: 'متجري الرقمي',
+    adminEmail: 'ibrahimebentabete500@gmail.com',
+    adminPass: 'ibrahim12',
+    phone: ''
   };
 
   try {
-    const firebaseConfig = { apiKey, authDomain, projectId, storageBucket, messagingSenderId, appId };
 
-    // حفظ الإعدادات في localStorage حتى لا تُعاد الإدخال عند التحميل
-    localStorage.setItem('fb_config', JSON.stringify({
-      ...firebaseConfig,
-      storeName: config.storeName,
-      adminEmail: config.adminEmail,
-      adminPass: config.adminPass,
-      phone: config.phone
-    }));
+    const firebaseConfig = {
+      apiKey: "AIzaSyCE9KhdPGgyhjBx3523tUTwnlrFSVjFE9o",
+      authDomain: "digi-3ee68.firebaseapp.com",
+      projectId: "digi-3ee68",
+      storageBucket: "digi-3ee68.firebasestorage.app",
+      messagingSenderId: "290322336354",
+      appId: "1:290322336354:web:9144f8ae2e3c968bfe1f3b",
+      measurementId: "G-EKMPJD1LRF"
+    };
 
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     }
+
     db = firebase.firestore();
     auth = firebase.auth();
 
@@ -1643,11 +1613,12 @@ function initFirebase() {
     document.getElementById('storeLogo').textContent = config.storeName;
 
     loadProducts();
-    showToast('✅ تم الاتصال بـ Firebase وحُفظت الإعدادات!', 'success');
+
   } catch (e) {
-    showToast('خطأ في إعداد Firebase: ' + e.message, 'error');
+    alert('Firebase Error: ' + e.message);
   }
 }
+
 
 function resetConfig() {
   if (confirm('هل تريد مسح إعدادات Firebase والبدء من جديد؟')) {
