@@ -1,0 +1,113 @@
+.success-modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.success-header {
+  text-align: center;
+}
+
+.success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--teal);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+
+.success-header h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.success-header p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.order-id-block {
+  background: rgba(42,157,143,0.07);
+  border: 1px solid rgba(42,157,143,0.3);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.order-id-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.order-id-value {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--teal);
+  letter-spacing: 0.03em;
+}
+
+.order-id-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.payment-instructions {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pay-inst-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.pay-inst-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.pay-inst-label { color: var(--muted); }
+.pay-inst-val   { font-weight: 700; color: var(--text); }
+
+.pay-inst-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+.pay-inst-note strong { color: var(--accent); }
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

@@ -1,0 +1,304 @@
+.admin-page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* Admin nav */
+.admin-nav {
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+  gap: 1rem;
+}
+
+.admin-brand {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 4px;
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius);
+  padding: 3px;
+}
+
+.admin-tab {
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius);
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.admin-tab-active {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.btn-sm { padding: 0.35rem 0.8rem; font-size: 0.8rem; }
+
+/* Container */
+.admin-container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Filters */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-pill:hover { border-color: var(--accent); color: var(--text); }
+.filter-pill-active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+.filter-count {
+  background: rgba(0,0,0,0.25);
+  border-radius: 100px;
+  padding: 1px 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.filter-pill-active .filter-count { background: rgba(0,0,0,0.2); }
+
+/* Orders */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.2rem;
+  transition: border-color 0.15s;
+}
+.order-card:hover { border-color: rgba(232,150,12,0.3); }
+
+.order-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 0.6rem;
+}
+
+.order-number {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.order-buyer {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+.order-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.order-items-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.order-item-tag {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.order-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 0.65rem;
+}
+
+.order-total {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--teal);
+}
+
+.order-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Products manager */
+.products-manager {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .products-manager { grid-template-columns: 1fr; }
+}
+
+.products-panel, .product-form-panel {
+  min-width: 0;
+}
+
+.product-form-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+}
+
+.admin-product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-product-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  transition: border-color 0.15s;
+}
+.admin-product-item:hover { border-color: var(--accent); }
+
+.admin-product-emoji {
+  font-size: 1.5rem;
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.admin-product-info { flex: 1; }
+.admin-product-name { font-size: 0.9rem; font-weight: 700; }
+.admin-product-meta { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+.admin-product-actions { display: flex; gap: 6px; flex-shrink: 0; }
+
+/* Emoji grid */
+.emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.emoji-opt {
+  width: 38px; height: 38px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+.emoji-opt:hover { border-color: var(--accent); }
+.emoji-opt-active { border-color: var(--accent); background: rgba(232,150,12,0.1); }
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1rem;
+  transition: border-color 0.15s;
+}
+.stat-card:hover { border-color: var(--accent); }
+
+.stat-value {
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.admin-empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 600px) {
+  .admin-nav-inner { gap: 6px; }
+  .admin-brand { font-size: 0.85rem; }
+  .admin-tab { padding: 0.3rem 0.65rem; font-size: 0.78rem; }
+  .admin-container { padding: 1.25rem 1rem; }
+}

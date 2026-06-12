@@ -1,0 +1,194 @@
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 200;
+}
+
+.cart-sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: min(420px, 100vw);
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.cart-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.btn-close-cart {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem 1.4rem;
+}
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 200px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.cart-empty-icon { font-size: 2.5rem; }
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-item-emoji {
+  font-size: 1.6rem;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cart-item-info { flex: 1; }
+.cart-item-name  { font-size: 0.88rem; font-weight: 600; margin-bottom: 2px; }
+.cart-item-price { font-size: 0.82rem; color: var(--teal); }
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.qty-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.qty-btn:hover { background: rgba(255,255,255,0.08); }
+
+/* Checkout area */
+.cart-checkout {
+  border-top: 2px solid var(--border);
+  padding: 1rem 1.4rem 1.4rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.checkout-section {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.checkout-section:last-of-type { border-bottom: none; }
+
+.checkout-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.payment-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.pay-opt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 0.65rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.pay-opt:hover { background: rgba(255,255,255,0.03); }
+
+.pay-opt-active-baridi {
+  border-color: var(--baridi);
+  background: rgba(42,157,143,0.08);
+}
+.pay-opt-active-flexi {
+  border-color: var(--flexi);
+  background: rgba(124,77,255,0.08);
+}
+
+.pay-opt-icon { font-size: 1.3rem; }
+.pay-opt-name { font-size: 0.8rem; font-weight: 700; color: var(--text); }
+.pay-opt-note { font-size: 0.7rem; color: var(--muted); }
+
+/* Totals */
+.totals { gap: 6px; }
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.total-fee  { color: var(--flexi); font-size: 0.8rem; }
+.total-main { font-size: 1rem; font-weight: 800; color: var(--teal); }
+
+.checkout-input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.8rem;
+  color: var(--text);
+  font-size: 0.875rem;
+  transition: border-color 0.15s;
+}
+.checkout-input::placeholder { color: var(--muted); }
+.checkout-input:focus { outline: none; border-color: var(--accent); }
+
+.btn-order { margin-top: 0.75rem; }
